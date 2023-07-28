@@ -19,14 +19,9 @@ cliente.enderecos = [
     },
 ];
 
-cliente.enderecos.push({
-    rua: "R. Joseph Ladder",
-    numero: 404,
-    apartamento: false,  
-})
+const chavesDoObj = Object.keys(cliente);
+console.log (chavesDoObj)
 
-const listaApenasApartamentos = cliente.enderecos.filter(
-    (endereco) => endereco.apartamento === true
-);
-  
-console.log(listaApenasApartamentos);
+if(!chavesDoObj.includes("enderecos")){
+    console.error("Erro. É necessário ter um endereço cadastrado")
+}

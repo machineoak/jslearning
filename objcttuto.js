@@ -19,14 +19,16 @@ cliente.enderecos = [
     },
 ];
 
-cliente.enderecos.push({
-    rua: "R. Joseph Ladder",
-    numero: 404,
-    apartamento: false,  
-})
+function ligaParaCliente(telefoneComercial, telefoneResidencial){
+    console.log(`ligando para ${telefoneComercial}`);
+    console.log(`ligando para ${telefoneResidencial}`);
+};
 
-const listaApenasApartamentos = cliente.enderecos.filter(
-    (endereco) => endereco.apartamento === true
-);
-  
-console.log(listaApenasApartamentos);
+ligaParaCliente(...cliente.telefone)
+
+const encomenda = {
+    destinatario: cliente.nome,
+    ...cliente.enderecos[0],
+};
+
+console.log(encomenda);
